@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+import { ProcessPayrollDialog } from "@/components/payroll/ProcessPayrollDialog";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -68,7 +68,7 @@ const Payroll = () => {
               <h2 className="text-xl font-semibold">Current Payroll Period</h2>
               <p className="text-sm text-gray-500">May 1-15, 2024</p>
             </div>
-            <Button>Process Payroll</Button>
+            <ProcessPayrollDialog />
           </div>
 
           <div className="rounded-md border">

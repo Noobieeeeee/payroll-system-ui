@@ -7,8 +7,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+import { NewAdjustmentDialog } from "@/components/rate-adjustments/NewAdjustmentDialog";
 import { Check, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -69,7 +70,7 @@ const RateAdjustments = () => {
                 Review and approve rate adjustment requests
               </p>
             </div>
-            <Button>New Adjustment</Button>
+            <NewAdjustmentDialog />
           </div>
 
           <div className="rounded-md border">

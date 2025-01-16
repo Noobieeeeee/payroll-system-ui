@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { EmployeeTable } from "@/components/dashboard/EmployeeTable";
-import { Button } from "@/components/ui/button";
+import { AddEmployeeDialog } from "@/components/employees/AddEmployeeDialog";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -40,7 +40,7 @@ const Employees = () => {
                 A list of all employees in your organization
               </p>
             </div>
-            <Button>Add Employee</Button>
+            <AddEmployeeDialog />
           </div>
           <EmployeeTable />
         </div>

@@ -7,8 +7,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+import { NewRequestDialog } from "@/components/cash-advance/NewRequestDialog";
 import { Check, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -75,7 +76,7 @@ const CashAdvance = () => {
                 Review and approve pending requests
               </p>
             </div>
-            <Button>New Request</Button>
+            <NewRequestDialog />
           </div>
 
           <div className="rounded-md border">
