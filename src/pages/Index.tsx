@@ -1,53 +1,38 @@
 import { Layout } from "@/components/layout/Layout";
-import { StatCard } from "@/components/dashboard/StatCard";
-import { EmployeeTable } from "@/components/dashboard/EmployeeTable";
+import { PayrollSummary } from "@/components/dashboard/PayrollSummary";
+import { PayrollTable } from "@/components/dashboard/PayrollTable";
+import { PayrollPeriodSelect } from "@/components/dashboard/PayrollPeriodSelect";
 import { Button } from "@/components/ui/button";
-import { Users, DollarSign, Calendar, FileText } from "lucide-react";
+import { FileDown, Printer } from "lucide-react";
 
 const Index = () => {
   return (
     <Layout>
       <div className="space-y-8">
         <div>
-          <h1 className="text-3xl font-bold">Dashboard</h1>
-          <p className="text-gray-600 mt-2">
-            Welcome to PayrollPH. Here's your overview.
+          <h1 className="text-3xl font-bold">Payroll Dashboard</h1>
+          <p className="text-muted-foreground mt-2">
+            Overview of current payroll period and employee compensation
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <StatCard
-            title="Total Employees"
-            value="150"
-            icon={Users}
-            trend={{ value: 5, isPositive: true }}
-          />
-          <StatCard
-            title="Pending Cash Advances"
-            value="12"
-            icon={DollarSign}
-            trend={{ value: 2, isPositive: false }}
-          />
-          <StatCard
-            title="Next Payroll Date"
-            value="May 15, 2024"
-            icon={Calendar}
-          />
-          <StatCard
-            title="Tax Compliance"
-            value="98%"
-            icon={FileText}
-            trend={{ value: 3, isPositive: true }}
-          />
+        <PayrollSummary />
+
+        <div className="flex items-center justify-between">
+          <PayrollPeriodSelect />
+          <div className="flex gap-2">
+            <Button variant="outline">
+              <FileDown className="mr-2 h-4 w-4" />
+              Export Data
+            </Button>
+            <Button>
+              <Printer className="mr-2 h-4 w-4" />
+              Generate Payroll
+            </Button>
+          </div>
         </div>
 
-        <div className="space-y-4">
-          <div className="flex justify-between items-center">
-            <h2 className="text-xl font-semibold">Employee Management</h2>
-            <Button>Add Employee</Button>
-          </div>
-          <EmployeeTable />
-        </div>
+        <PayrollTable />
       </div>
     </Layout>
   );

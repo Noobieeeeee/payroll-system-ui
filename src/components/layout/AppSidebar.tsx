@@ -17,12 +17,14 @@ import {
   FileText,
   BarChart2,
   Settings,
+  Clock,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const menuItems = [
   { title: "Dashboard", icon: BarChart3, url: "/" },
   { title: "Employees", icon: Users, url: "/employees" },
+  { title: "Attendance", icon: Clock, url: "/attendance" },
   { title: "Payroll", icon: Calculator, url: "/payroll" },
   { title: "Cash Advance", icon: DollarSign, url: "/cash-advance" },
   { title: "Rate Adjustments", icon: ArrowUpDown, url: "/rate-adjustments" },
