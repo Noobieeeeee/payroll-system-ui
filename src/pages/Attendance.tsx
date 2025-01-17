@@ -7,7 +7,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -15,10 +14,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { CalendarIcon, Printer, Plus, Car, Plane } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { AddTravelDialog } from "@/components/attendance/AddTravelDialog";
+import { CaterLeavesDialog } from "@/components/attendance/CaterLeavesDialog";
+import { AddAttendanceDialog } from "@/components/attendance/AddAttendanceDialog";
+import { PrintAttendanceDialog } from "@/components/attendance/PrintAttendanceDialog";
 
 const attendanceData = [
   {
@@ -96,22 +100,10 @@ export default function Attendance() {
             />
           </div>
           <div className="flex gap-2">
-            <Button variant="outline">
-              <Car className="mr-2 h-4 w-4" />
-              Add Travel
-            </Button>
-            <Button variant="outline">
-              <Plane className="mr-2 h-4 w-4" />
-              Cater Leaves
-            </Button>
-            <Button variant="outline">
-              <Plus className="mr-2 h-4 w-4" />
-              Add Attendance
-            </Button>
-            <Button>
-              <Printer className="mr-2 h-4 w-4" />
-              Print Attendance
-            </Button>
+            <AddTravelDialog />
+            <CaterLeavesDialog />
+            <AddAttendanceDialog />
+            <PrintAttendanceDialog />
           </div>
         </div>
 
